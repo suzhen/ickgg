@@ -25,10 +25,10 @@ module Ickgg
       {
         application: "config/application.rb",
         database: "config/database.yml",
-        redis: "config/redis.yml"
+        redis: "config/redis.yml",
         spec_helper: "spec/spec_helper.rb",
         gemfile: "Gemfile",
-        engine: "engine.rb"
+        engine: "engine.rb",
         # guardfile: "Guardfile",
         # rakefile: "Rakefile",
         rspec_config: ".rspec",
