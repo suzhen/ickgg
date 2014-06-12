@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'ickgg/command'
+Ickgg::Command.start

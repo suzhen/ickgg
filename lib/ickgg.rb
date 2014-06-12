@@ -1,5 +1,6 @@
-require "ickgg/version"
-
+require 'ickgg/version'
 module Ickgg
-  # Your code goes here...
+  def self.version
+    $stdout.write VERSION
+  end
 end

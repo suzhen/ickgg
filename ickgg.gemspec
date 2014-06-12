@@ -6,10 +6,10 @@ require 'ickgg/version'
 Gem::Specification.new do |spec|
   spec.name          = "ickgg"
   spec.version       = Ickgg::VERSION
-  spec.authors       = ["suezhen"]
-  spec.email         = ["sz3001@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.authors       = ["Evan Sue"]
+  spec.email         = ["evan.su@i-click.com"]
+  spec.summary       = %q{Create grape on goliath scaffold for 'Tracking'}
+  spec.description   = %q{Quickly create Tracking project}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -19,5 +19,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.5"
-  spec.add_development_dependency "rake"
+  spec.add_runtime_dependency "thor",'~> 0.19'
+  spec.add_runtime_dependency "activesupport", '~> 3.1'
+  spec.add_runtime_dependency "rake", '~> 0'
+  spec.add_runtime_dependency "pry", '~> 0'
+  spec.add_runtime_dependency "awesome_print", '~> 0'
 end

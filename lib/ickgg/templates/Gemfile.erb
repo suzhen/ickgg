@@ -1,0 +1,21 @@
+source "http://ruby.taobao.org"
+
+gem 'grape'
+gem 'goliath'
+gem 'em-synchrony'
+
+gem 'activerecord', '~> 4.1.1'
+gem 'activesupport, '~> 4.1.1'
+gem 'mysql2'
+gem 'redis'
+gem 'em-http-request'
+
+group :development do
+  gem 'guard-rspec'
+  gem 'pry'
+end
+
+group :test do
+  gem 'factory_girl'
+  gem 'rspec'
+end

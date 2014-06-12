@@ -1,0 +1,17 @@
+db_config = YAML.load_file(GG.config.config_dir + '/database.yml')
+
+ActiveRecord::Base.establish_connection(db_config[GG.env.to_s])
+
+module <%= @app_name %>
+  class Application < Grape::API
+    format :json
+
+    # GG.config.app_resources[:helpers].each do |helper_item|
+    #   helper helper_item
+    # end
+
+    # GG.config.app_resources[:apis].each do |api_item|
+    #   mount api_item
+    # end
+  end
+end

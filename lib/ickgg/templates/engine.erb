@@ -1,0 +1,46 @@
+class GG
+  
+  private_class_method :new 
+
+  def self.config
+    @instance ||= new
+  end
+
+  def self.env
+    Goliath.env
+  end
+
+  def root_dir
+    @root_dir ||= File.expand_path("../..", __FILE__)
+  end
+
+  %w(app config lib).each do |dir|
+     define_method "#{dir}_dir" do File.join(root_dir, "#{dir}") end
+  end
+ 
+
+  def app_resources
+    @app_resources ||= load_resources
+  end
+
+  private
+
+  def load_resources
+    app_resources = { }
+
+    [:apis, :helpers, :models :entities].each do |item|
+      app_resources[item] = []
+
+      Dir.foreach(File.join(app_dir, item.to_s)) do |entry|
+        next if entry == "." || entry == ".."
+        if entry.end_with?("rb")
+          require entry
+          app_resources[item] << entry.split(".rb").first.camelize.constantize
+        end
+      end
+    end
+
+    app_resources
+  end
+
+end
