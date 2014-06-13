@@ -10,7 +10,7 @@ require 'yaml'
 require 'mysql2'
 require 'redis'
 require "pry"
-require "./engine"
+require "#{File.dirname File.expand_path(__FILE__)}/engine"
 
 
 %w{apis helpers models entities}.each do |dir|
@@ -20,7 +20,7 @@ end
 $LOAD_PATH.unshift GG.config.config_dir
 
 $LOAD_PATH.unshift GG.config.lib_dir
-ActiveSupport::Dependencies.autoload_paths << File.expand_path('../lib', __FILE__)
+ActiveSupport::Dependencies.autoload_paths << File.expand_path('../../lib', __FILE__)
 
 
 

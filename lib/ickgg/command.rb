@@ -27,17 +27,17 @@ module Ickgg
         database: "config/database.yml",
         redis: "config/redis.yml",
         spec_helper: "spec/spec_helper.rb",
-        gemfile: "Gemfile",
-        engine: "engine.rb",
+        gemfile: "Gemfile",  
         # guardfile: "Guardfile",
         # rakefile: "Rakefile",
+        engine: "script/engine.rb",
         rspec_config: ".rspec",
         server: "script/server.rb"
       }.each do |k, v|
         template("templates/#{k}.erb", "#{app_name}/#{v}")
       end
 
-      inside app_root do
+      inside app_name do
         run "bundle install"
       end
 
@@ -83,7 +83,7 @@ module Ickgg
       @entity_name = g_name.include?("_") ? g_name.split("_").first : g_name
       @class_name = g_name.camelize
       case g_type
-      when "entities"
+      when "entity"
         generate_entity g_name, args
       when "api"
         @resources_symbol = g_name.to_sym

@@ -28,7 +28,7 @@ class GG
   def load_resources
     app_resources = { }
 
-    [:apis, :helpers, :models :entities].each do |item|
+    [:apis, :helpers, :models ,:entities].each do |item|
       app_resources[item] = []
 
       Dir.foreach(File.join(app_dir, item.to_s)) do |entry|
